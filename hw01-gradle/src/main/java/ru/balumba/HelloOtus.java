@@ -1,6 +1,6 @@
 package ru.balumba;
 
-import com.google.common.base.Optional;
+import java.util.Optional;
 
 public class HelloOtus {
     public static void main(String[] args) {
