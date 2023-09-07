@@ -1,11 +1,17 @@
 package ru.balumba;
 
-import java.util.Optional;
+
+import com.google.common.base.Strings;
 
 public class HelloOtus {
     public static void main(String[] args) {
-        Optional<Integer> possible = Optional.of(101);
+        System.out.println("Hello Otus!");
 
-        System.out.println("Hallow " + possible.get() + " " + possible.hashCode());
+        String result = Strings.commonSuffix(
+                "Information",
+                "Education"
+        );
+
+        System.out.println("Слова, оканчивающиеся на \"" + result + "\"");
     }
 }
