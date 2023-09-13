@@ -28,9 +28,13 @@ public class Generics {
         globalBox.add(apple2);
         globalBox.add(orange);
 
+        System.out.println("Compire " + globalBox.compare(boxApples));
         System.out.println("GlobalBox before join = " + globalBox.weight());
         globalBox.join(boxApples);
         System.out.println("GlobalBox after join = " + globalBox.weight());
+
+        System.out.println("Box Apples = " + boxApples.weight());
+        System.out.println("Box Oranges = " + boxOranges.weight());
     }
 
 }

@@ -21,18 +21,18 @@ public class Box<F extends Fruit> {
         return (int) res;
     }
 
-    public boolean compare(Box<F> box) {
+    public boolean compare(Box<? extends Fruit> box) {
         if (box == null) return false;
 
         return Math.abs(this.weight() - box.weight()) < 0.0001;
     }
 
-    public void join(Box<F> box) {
-        for (int i=0;i<this.fruits.size();i++) {
-            if (box.equals(this.fruits.get(i))) {
-                box.add(this.fruits.get(i));
+    public void join(Box<? extends Fruit> otherBox) {
+        if (!this.equals(otherBox)) {
+            for (int i = 0; i < otherBox.fruits.size(); i++) {
+                this.add((F) otherBox.fruits.get(i));
 
-                this.fruits.remove(i);
+                otherBox.fruits.remove(i);
             }
         }
     }
